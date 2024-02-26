@@ -7,7 +7,7 @@
             <div class="card-body">
             <h6 class="card-title">Data Admin</h6>
             </div>
-        <table class="table">
+        <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Nama</th>

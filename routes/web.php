@@ -22,14 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/tokoh', function () {
-<<<<<<< HEAD
-=======
     return view('admin.layout');
-});
-
-Route::get('/admin', function () {
->>>>>>> 3609376a7538f52e9482485142f943b94d910832
-    return view('admin.admin');
 });
 
 Route::get('/admin', function () {
