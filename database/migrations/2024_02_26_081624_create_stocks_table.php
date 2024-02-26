@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->string('kode');
+            $table->string('namab');
+            $table->integer('harga');
+            $table->integer('stock');
+            $table->string('supplier');
+            $table->string('cabang');
             $table->timestamps();
         });
     }

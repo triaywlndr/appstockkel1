@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bkeluars', function (Blueprint $table) {
             $table->id();
+            $table->date('tglf');
+            $table->date('tglt');
+            $table->string('namap');
+            $table->enum('pembayaran');
             $table->timestamps();
         });
     }

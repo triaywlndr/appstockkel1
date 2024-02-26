@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bmasuks', function (Blueprint $table) {
             $table->id();
+            $table->date('tgl');
+            $table->enum('namab');
+            $table->integer('harga');
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }
