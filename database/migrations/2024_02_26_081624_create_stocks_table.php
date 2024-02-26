@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('namab');
             $table->integer('harga');
             $table->integer('stock');
-            $table->string('supplier');
+            $table->foreignId('supplier_id');
             $table->string('cabang');
             $table->timestamps();
         });

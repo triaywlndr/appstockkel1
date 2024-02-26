@@ -17,6 +17,7 @@ return new class extends Migration
             $table->enum('namab');
             $table->integer('harga');
             $table->integer('jumlah');
+            $table->foreignId('supplier_id');
             $table->timestamps();
         });
     }

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('bkeluars', function (Blueprint $table) {
             $table->id();
-            $table->date('tglf');
-            $table->date('tglt');
-            $table->string('namap');
+            $table->date('faktur');
+            $table->date('tempo');
+            $table->foreignId('pelanggan_id');
             $table->enum('pembayaran');
             $table->timestamps();
         });
