@@ -10,7 +10,7 @@
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Selamat Datang</h5>
-      <p class="card-text">Adalah tempat stock barnang barang termurah dan berkualitas</p>
+      <p class="card-text">Adalah tempat stock barang barang termurah dan berkualitas</p>
       <p class="card-text"><small class="text-body-secondary">By Rizky Wijaya</small></p>
     </div>
         <a a href="{{ route('login') }}" class="btn btn-primary">Masuk</a>
