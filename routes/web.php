@@ -21,10 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/tokoh', function () {
     return view('admin.layout');
 });
@@ -32,3 +28,9 @@ Route::get('/tokoh', function () {
 Route::get('/admin', function () {
     return view('admin.admin');
 });
+
+Route::get('/admin', function () {
+    return view('admin.admin');
+});
+
+Route::get('/tambahstock', [App\Http\Controllers\stockController::class, 'create']);

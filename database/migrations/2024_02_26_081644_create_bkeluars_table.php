@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bkeluars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('stock_id');
             $table->date('faktur');
             $table->date('tempo');
             $table->foreignId('pelanggan_id');
