@@ -33,4 +33,8 @@ Route::get('/admin', function () {
     return view('admin.admin');
 });
 
-Route::get('/tambahstock', [App\Http\Controllers\stockController::class, 'create']);
+Route::get('/tambahstock', [App\Http\Controllers\stock::class, 'create']);
+Route::post('/savestock', [App\Http\Controllers\stock::class, 'store']);
+Route::get('/edit{id}', [App\Http\Controllers\stock::class, 'edit']);
+Route::put('/updatestock{id}', [App\Http\Controllers\stock::class, 'update']);
+Route::get('/delete{id}', [App\Http\Controllers\stock::class, 'destroy']);
