@@ -28,3 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/tokoh', function () {
     return view('admin.layout');
 });
+
+Route::get('/admin', function () {
+    return view('admin.admin');
+});
