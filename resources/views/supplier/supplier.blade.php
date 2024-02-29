@@ -16,7 +16,7 @@
       <th scope="col">Alamat Perusahaan</th>
       <th scope="col"></th>
       <th scope="col"></th>
-      <th scope="col">admin</th>
+      <th scope="col">Admin</th>
     </tr>
   </thead>
   <tbody>
