@@ -39,7 +39,7 @@ Route::get('/delete{id}', [App\Http\Controllers\stock::class, 'destroy']);
 Route::get('/supplier', function () {
     return view('supplier.supplier');
 });
-Route::get('/tambahsupplier', [App\Http\Controllers\suppler::class, 'create']);
+Route::get('/tambahsupplier', [App\Http\Controllers\supplier::class, 'create']);
 Route::get('/savesupplier ', [App\Http\Controllers\supplier::class, 'store']);
 Route::get('/edit{id} ', [App\Http\Controllers\supplier::class, 'edit']);
 Route::get('/updatesupplier{id} ', [App\Http\Controllers\supplier::class, 'update']);
