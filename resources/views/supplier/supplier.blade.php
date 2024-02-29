@@ -2,8 +2,6 @@
 @section('conten')
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
             <div class="card-body">
             <h6 class="card-title">Data Supplier</h6>
             </div>
