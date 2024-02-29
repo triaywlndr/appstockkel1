@@ -5,15 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card-body">
-            <h6 class="card-title">Data Admin</h6>
+            <h6 class="card-title">Data Supplier</h6>
             </div>
         <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Nama</th>
-      <th scope="col">Email</th>
-      <th scope="col">Jabatan</th>
-      <th scope="col">Cabang</th>
+      <th scope="col">No</th>
+      <th scope="col">Nama Supplier</th>
+      <th scope="col">No. Whatsapp</th>
+      <th scope="col">Alamat Perusahaan</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">admin</th>
     </tr>
   </thead>
   <tbody>
