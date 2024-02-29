@@ -34,3 +34,7 @@ Route::post('/savestock', [App\Http\Controllers\stock::class, 'store']);
 Route::get('/edit{id}', [App\Http\Controllers\stock::class, 'edit']);
 Route::put('/updatestock{id}', [App\Http\Controllers\stock::class, 'update']);
 Route::get('/delete{id}', [App\Http\Controllers\stock::class, 'destroy']);
+
+Route::get('/supplier', function () {
+    return view('supplier.supplier');
+});
