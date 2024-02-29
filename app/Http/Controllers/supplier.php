@@ -19,7 +19,7 @@ class supplier extends Controller
      */
     public function create()
     {
-        //
+        return view ('supplier.insert');
     }
 
     /**
@@ -27,7 +27,30 @@ class supplier extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'nama' => ['required'],
+                'nomor' => ['required'],
+                'alamat' => ['required',],
+            ],
+            [
+                'nama.required' => 'Nama kosong',
+                'nomor.required' => 'Nomor kosong',
+                'alamat.required' => 'Alamat kosong',
+            ]
+        );
+
+        $sup = new Supplier;
+        $sup-> nama=$request ['nama'];
+        $sup-> nomor=$request ['nomor'];
+        $sup-> alamat=$request ['alamat'];
+        $sup-> save();
+
+        if($sup){
+            return redirect('/supplier')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahsupplier')->with('status', 'Data telah ditambahkan');
+        }
     }
 
     /**

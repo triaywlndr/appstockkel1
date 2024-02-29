@@ -11,7 +11,7 @@ class stock extends Controller
      */
     public function index()
     {
-        //
+    
     }
 
     /**
@@ -19,7 +19,7 @@ class stock extends Controller
      */
     public function create()
     {
-        //
+        return view ('supplier.insert');
     }
 
     /**
@@ -27,7 +27,7 @@ class stock extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
