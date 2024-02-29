@@ -11,7 +11,7 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -19,7 +19,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('supplier.insert');
     }
 
     /**
@@ -27,7 +27,13 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sup = Supplier::create($request->validate());
+
+        if ($sup) {
+            return redirect('/supplier')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahsupplier')->with('status', 'Data Gagal');
+        }
     }
 
     /**
