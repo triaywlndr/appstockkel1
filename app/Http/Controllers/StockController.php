@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class dashboard extends Controller
+class StockController extends Controller
 {
     /**
      * Display a listing of the resource.

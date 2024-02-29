@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class bkeluar extends Controller
+class BmasukController extends Controller
 {
     /**
      * Display a listing of the resource.

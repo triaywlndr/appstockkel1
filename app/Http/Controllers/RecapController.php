@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class stock extends Controller
+class RecapController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-    
+        //
     }
 
     /**
@@ -19,7 +19,7 @@ class stock extends Controller
      */
     public function create()
     {
-        return view ('supplier.insert');
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class stock extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
