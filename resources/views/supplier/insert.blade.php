@@ -7,7 +7,7 @@
   <div class="mb-3">
     <label for="nama" class="form-label">Nama Supplier</label>
     <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama supplier" value="{{old('nama')}}">
-    <div style="color:red">
+    <div style=color:red>
       @error('nama')
           {{$message}}
       @enderror

@@ -29,7 +29,24 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        $supplier = new Supplier();
+        $request->validate(
+            [
+                'nama'=>['required'],
+                'nomor'=>['required'],
+                'alamat'=>['required']
+            ],
+            [
+                'nama.required'=>'Nama kosong',
+                'nomor.required'=>'Nomor kosong',
+                'alamat.required'=>'Alamat kosong'
+            ]
+        );
+
+        $supplier = new Supplier;
+        $supplier-> nama=$request ['nama'];
+        $supplier-> nomor=$request ['nomor'];
+        $supplier-> alamat=$request ['alamat'];
+        $supplier-> save();
 
         if ($supplier) {
             return redirect('/supplier')->with('status', 'Data telah ditambahkan');
