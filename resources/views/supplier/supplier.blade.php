@@ -17,14 +17,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($supplier as $sup)
+                @foreach ($supplier as $supp)
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
-                    <td>{{$sup->nama }}</td>
-                    <td>{{$sup->nomor }}</td>
-                    <td>{{$sup->alamat }}</td>
-                    <td><a href="/edit/{{$suppler->id}}" class="btn-btn-success">Edit</a></td>
-                    <td><a href="/delete/{{$suppler->id}}" class="btn btn-danger">Delete</a></td>
+                    <td>{{$supp->nama }}</td>
+                    <td>{{$supp->nomor }}</td>
+                    <td>{{$supp->alamat }}</td>
+                    <td><a href="/edit/{{$supp->id}}" class="btn-btn-success">Edit</a></td>
+                    <td><a href="/delete/{{$supp->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
                 @endforeach
             </tbody>
