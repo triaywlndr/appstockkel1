@@ -68,7 +68,8 @@ class SupplierController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $supplier = Supplier::find($id);
+        return view('supplier.edit', compact('supplier'));
     }
 
     /**
@@ -76,7 +77,30 @@ class SupplierController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+            [
+                'nama'=>['required'],
+                'nomor'=>['required'],
+                'alamat'=>['required']
+            ],
+            [
+                'nama.required'=>'Nama kosong',
+                'nomor.required'=>'Nomor kosong',
+                'alamat.required'=>'Alamat kosong'
+            ]
+        );
+
+        $supplier = Supplier::find($id);
+        $supplier-> nama=$request ['nama'];
+        $supplier-> nomor=$request ['nomor'];
+        $supplier-> alamat=$request ['alamat'];
+        $supplier-> save();
+
+        if ($supplier) {
+            return redirect('/supplier')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/edit{id}')->with('status', 'Data Gagal');
+        }
     }
 
     /**
