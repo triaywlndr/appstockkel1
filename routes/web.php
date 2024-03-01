@@ -29,18 +29,19 @@ Route::get('/tokoh', function () {
 Route::get('/admin', function () {
     return view('admin.admin');
 });
-Route::get('/tambahstock', [App\Http\Controllers\stock::class, 'create']);
-Route::post('/savestock', [App\Http\Controllers\stock::class, 'store']);
-Route::get('/edit{id}', [App\Http\Controllers\stock::class, 'edit']);
-Route::put('/updatestock{id}', [App\Http\Controllers\stock::class, 'update']);
-Route::get('/delete{id}', [App\Http\Controllers\stock::class, 'destroy']);
+Route::get('/tambahstock', [App\Http\Controllers\StockController::class, 'create']);
+Route::post('/savestock', [App\Http\Controllers\StockController::class, 'store']);
+Route::get('/edit{id}', [App\Http\Controllers\StockController::class, 'edit']);
+Route::put('/updatestock{id}', [App\Http\Controllers\StockController::class, 'update']);
+Route::get('/delete{id}', [App\Http\Controllers\StockController::class, 'destroy']);
 
 //supplier 
 Route::get('/supplier', function () {
     return view('supplier.supplier');
 });
-Route::get('/tambahsupplier', [App\Http\Controllers\supplier::class, 'create']);
-Route::get('/savesupplier ', [App\Http\Controllers\supplier::class, 'store']);
-Route::get('/edit{id} ', [App\Http\Controllers\supplier::class, 'edit']);
-Route::get('/updatesupplier{id} ', [App\Http\Controllers\supplier::class, 'update']);
-Route::get('/delete{id} ', [App\Http\Controllers\supplier::class, 'destroy']);
+Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'index']);
+Route::get('/tambahsupplier', [App\Http\Controllers\SupplierController::class, 'create']);
+Route::get('/savesupplier ', [App\Http\Controllers\SupplierController::class, 'store']);
+Route::get('/edit{id} ', [App\Http\Controllers\SupplierController::class, 'edit']);
+Route::get('/updatesupplier{id} ', [App\Http\Controllers\SupplierController::class, 'update']);
+Route::get('/delete{id} ', [App\Http\Controllers\SupplierController::class, 'destroy']);

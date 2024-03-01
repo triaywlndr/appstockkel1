@@ -12,31 +12,24 @@
                     <th scope="col">No. Whatsapp</th>
                     <th scope="col">Alamat Perusahaan</th>
                     <th scope="col">Admin</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="col">Rizky</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="col">Edwar</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="col">Ayu</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
+                @foreach ($supplier as $sup)
+                 <tr>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{{$sup->nama }}</td>
+                    <td>{{$sup->nomor }}</td>
+                    <td>{{$sup->alamat }}</td>
+                    <td><a href="/edit/{{$suppler->id}}" class="btn-btn-success">Edit</a></td>
+                    <td><a href="/delete/{{$suppler->id}}" class="btn btn-danger">Delete</a></td>
+                </tr>   
+                @endforeach
             </tbody>
         </table>
+        <a href="/tambahsupplier" class="btn btn-primary">Tambah Supplier</a>
     </div>
     </div>
     </div>
