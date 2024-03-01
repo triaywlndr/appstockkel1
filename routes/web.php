@@ -41,7 +41,7 @@ Route::get('/supplier', function () {
 });
 Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'index']);
 Route::get('/tambahsupplier', [App\Http\Controllers\SupplierController::class, 'create']);
-Route::get('/savesupplier ', [App\Http\Controllers\SupplierController::class, 'store']);
+Route::post('/savesupplier ', [App\Http\Controllers\SupplierController::class, 'store']);
 Route::get('/edit{id} ', [App\Http\Controllers\SupplierController::class, 'edit']);
-Route::get('/updatesupplier{id} ', [App\Http\Controllers\SupplierController::class, 'update']);
+Route::put('/updatesupplier{id} ', [App\Http\Controllers\SupplierController::class, 'update']);
 Route::get('/delete{id} ', [App\Http\Controllers\SupplierController::class, 'destroy']);
