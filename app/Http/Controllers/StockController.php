@@ -11,7 +11,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        //
+        $stock = Stock::all();
+        return view('stock.stock', compact('stock'));
     }
 
     /**
@@ -19,7 +20,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock.tambah');
     }
 
     /**
