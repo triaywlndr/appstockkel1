@@ -41,4 +41,4 @@ Route::get('/tambahsupplier', [App\Http\Controllers\SupplierController::class, '
 Route::post('/savesupplier ', [App\Http\Controllers\SupplierController::class, 'store']);
 Route::get('/editsupplier/{id} ', [App\Http\Controllers\SupplierController::class, 'edit']);
 Route::put('/updatesupplier/{id} ', [App\Http\Controllers\SupplierController::class, 'update']);
-Route::get('/delete/{id} ', [App\Http\Controllers\SupplierController::class, 'destroy']);
+Route::get('/deletet/{id} ', [App\Http\Controllers\SupplierController::class, 'destroy']);

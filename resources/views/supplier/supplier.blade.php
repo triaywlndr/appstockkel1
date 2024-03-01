@@ -24,7 +24,7 @@
                     <td>{{$supp->nomor }}</td>
                     <td>{{$supp->alamat }}</td>
                     <td><a href="/editsupplier/{{$supp->id}}" class="btn btn-success">Edit</a></td>
-                    <td><a href="/delete/{{$supp->id}}" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/deletet/{{$supp->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
                 @endforeach
             </tbody>
