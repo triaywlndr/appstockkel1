@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('faktur');
             $table->date('tempo');
             $table->foreignId('pelanggan_id');
-            $table->enum('pembayaran');
+            $table->enum('pembayaran',['Cash','Kredit']);
             $table->timestamps();
         });
     }

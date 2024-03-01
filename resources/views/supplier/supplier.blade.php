@@ -11,7 +11,6 @@
                     <th scope="col">Nama Supplier</th>
                     <th scope="col">No. Whatsapp</th>
                     <th scope="col">Alamat Perusahaan</th>
-                    <th scope="col">Admin</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                 </tr>

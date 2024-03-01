@@ -29,7 +29,7 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        $supplier = Supplier::create($request->validate());
+        $supplier = new Supplier();
 
         if ($supplier) {
             return redirect('/supplier')->with('status', 'Data telah ditambahkan');
