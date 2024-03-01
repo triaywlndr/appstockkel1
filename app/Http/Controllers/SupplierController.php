@@ -12,7 +12,7 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        $supplier = supplier::all();
+        $supplier = Supplier::all();
         return view('supplier.supplier', compact('supplier'));
     }
 
@@ -29,9 +29,9 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        $sup = Supplier::create($request->validate());
+        $supplier = Supplier::create($request->validate());
 
-        if ($sup) {
+        if ($supplier) {
             return redirect('/supplier')->with('status', 'Data telah ditambahkan');
         } else {
             return redirect('/tambahsupplier')->with('status', 'Data Gagal');
