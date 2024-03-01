@@ -2,8 +2,9 @@
 @section('conten')
     <div class="container">
         <div class="card-body">
-            <h6 class="card-title">Data Supplier</h6>
+            <h1 class="card-title">Data Supplier</h1>
         </div>
+        <hr>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -28,6 +29,7 @@
                 @endforeach
             </tbody>
         </table>
+        <hr>
         <a href="/tambahsupplier" class="btn btn-primary">Tambah Supplier</a>
     </div>
     </div>
