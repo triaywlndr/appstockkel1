@@ -21,14 +21,11 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/tokoh', function () {
-    return view('admin.layout');
-});
-
 //admin
 Route::get('/admin', function () {
     return view('admin.admin');
 });
+Route::get('/stock', [App\Http\Controllers\StockController::class, 'index']);
 Route::get('/tambahstock', [App\Http\Controllers\StockController::class, 'create']);
 Route::post('/savestock', [App\Http\Controllers\StockController::class, 'store']);
 Route::get('/edit{id}', [App\Http\Controllers\StockController::class, 'edit']);
