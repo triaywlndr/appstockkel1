@@ -13,7 +13,7 @@ class PelangganController extends Controller
     public function index()
     {
         $pelanggan = Pelanggan::all();
-        return view('pelanggan.pelanggan');
+        return view('pelanggan.pelanggan', compact('pelanggan'));
     }
 
     /**
@@ -41,7 +41,7 @@ class PelangganController extends Controller
             [
                 'namap.required'=>'Nama kosong',
                 'no.required'=>'Nomor kosong',
-                'jenisk.required'=>'Alamat kosong',
+                'jenisk.required'=>'Jenis Kelamin kosong',
                 'alamatt.required'=>'Alamat kosong',
                 'kota.required'=>'Kota kosong',
                 'provinsi.required'=>'Provinsi kosong'

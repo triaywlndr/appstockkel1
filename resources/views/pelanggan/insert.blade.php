@@ -34,6 +34,7 @@
           {{$message}}
         @enderror
     </div>
+    </div>
     <div>
         <label for="alamatt" class="form-label">Alamat</label>
         <input type="text" class="form-control" id="alamatt" name="alamatt" placeholder="Alamat" value="{{old('alamatt')}}">
@@ -45,7 +46,7 @@
       </div>
     <div>
         <label for="kota" class="form-label">Kota</label>
-        <input type="text" class="form-control" id="kota" name="kota" placeholder="kota" value="{{old('kota')}}">
+        <input type="text" class="form-control" id="kota" name="kota" placeholder="Kota" value="{{old('kota')}}">
         <div style=color:red>
           @error('kota')
               {{$message}}
@@ -54,13 +55,14 @@
       </div>
     <div>
         <label for="provinsi" class="form-label">Provinsi</label>
-        <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="provinsi" value="{{old('provinsi')}}">
+        <input type="text" class="form-control" id="provinsi" name="provinsi" placeholder="Provinsi" value="{{old('provinsi')}}">
         <div style=color:red>
           @error('provinsi')
               {{$message}}
           @enderror
         </div>
       </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+      <hr>
+        <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection
