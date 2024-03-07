@@ -18,7 +18,7 @@
                     <svg class="bi pe-none me-2" width="40" height="32">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
-                    <span class="fs-4">TOKOH HEMAT</span>
+                    <span class="fs-4">TOKO HEMAT</span>
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
@@ -60,6 +60,14 @@
                                 <use xlink:href="#people-circle"></use>
                             </svg>
                             Supplier
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/stock" class="nav-link text-white">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Stock
                         </a>
                     </li>
                 </ul>

@@ -28,7 +28,32 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'nama'=>['required'],
+                'nomor'=>['required'],
+                'alamat'=>['required']
+            ],
+            [
+                'nama.required'=>'Nama kosong',
+                'nomor.required'=>'Nomor kosong',
+                'alamat.required'=>'Alamat kosong'
+            ]
+        );
+
+        $stock = new Stock;
+        $stock-> kode=$request ['kode'];
+        $stock-> namab=$request ['namab'];
+        $stock-> harga=$request ['harga'];
+        $stock-> stock=$request ['stock'];
+        $stock-> supplier_id=$request ['supplier'];
+        $stock-> save();
+
+        if ($supplier) {
+            return redirect('/supplier')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahsupplier')->with('status', 'Data Gagal');
+        }
     }
 
     /**

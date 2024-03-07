@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('pelanggans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('namap');
+            $table->string('no');
             $table->enum('jenisk',['Laki-Laki', 'Perempuan']);
-            $table->string('alamat');
+            $table->string('alamatt');
+            $table->string('kota');
+            $table->string('provinsi');
             $table->timestamps();
         });
     }

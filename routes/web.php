@@ -42,3 +42,14 @@ Route::post('/savesupplier ', [App\Http\Controllers\SupplierController::class, '
 Route::get('/editsupplier/{id} ', [App\Http\Controllers\SupplierController::class, 'edit']);
 Route::put('/updatesupplier/{id} ', [App\Http\Controllers\SupplierController::class, 'update']);
 Route::get('/deletet/{id} ', [App\Http\Controllers\SupplierController::class, 'destroy']);
+
+//pelanggan
+Route::get('/pelanggan', function () {
+    return view('pelanggan.pelanggan');
+});
+Route::get('/pelanggan', [App\Http\Controllers\PelangganController::class, 'index']);
+Route::get('/tambahpelanggan', [App\Http\Controllers\PelangganController::class, 'create']);
+Route::post('/savepelanggan', [App\Http\Controllers\PelangganController::class, 'store']);
+Route::get('/editpelanggan/{id}', [App\Http\Controllers\PelangganController::class, 'edit']);
+Route::put('/updatepelanggan/{id}', [App\Http\Controllers\PelangganController::class, 'update']);
+Route::get('/deletee', [App\Http\Controllers\PelangganController::class, 'destroy']);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 
 class PelangganController extends Controller
@@ -11,7 +12,8 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        //
+        $pelanggan = Pelanggan::all();
+        return view('pelanggan.pelanggan');
     }
 
     /**
@@ -19,7 +21,7 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        //
+        return view('pelanggan.insert');
     }
 
     /**
@@ -27,7 +29,39 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'namap'=>['required'],
+                'no'=>['required'],
+                'jenisk'=>['required'],
+                'alamat'=>['required'],
+                'kota'=>['required'],
+                'provinsi'=>['required'],
+            ],
+            [
+                'namap.required'=>'Nama kosong',
+                'no.required'=>'Nomor kosong',
+                'jenisk.required'=>'Alamat kosong',
+                'alamatt.required'=>'Alamat kosong',
+                'kota.required'=>'Kota kosong',
+                'provinsi.required'=>'Provinsi kosong'
+            ]
+        );
+
+        $pelanggan = new Pelanggan;
+        $pelanggan-> namap=$request ['namap'];
+        $pelanggan-> no=$request ['no'];
+        $pelanggan-> jenisk=$request ['jenisk'];
+        $pelanggan-> alamatt=$request ['alamatt'];
+        $pelanggan-> kota=$request ['kota'];
+        $pelanggan-> provinsi=$request ['provinsi'];
+        $pelanggan-> save();
+
+        if ($pelanggan) {
+            return redirect('/pelanggan')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahpelanggan')->with('status', 'Data Gagal');
+        }
     }
 
     /**
