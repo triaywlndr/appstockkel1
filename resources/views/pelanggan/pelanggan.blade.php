@@ -2,7 +2,7 @@
 @section('conten')
     <div class="container">
         <div class="card-body">
-            <h1 class="card-title">Data Supplier</h1>
+            <h1 class="card-title">Data Pelanggan</h1>
         </div>
         <hr>
         <table class="table table-striped">
@@ -30,7 +30,7 @@
                     <td>{{$plggn->kota }}</td>
                     <td>{{$plggn->provinsi }}</td>
                     <td><a href="/editpelanggan/{{$plggn->id}}" class="btn btn-success">Edit</a></td>
-                    <td><a href="/deletet/{{$plggn->id}}" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/deletee/{{$plggn->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
                 @endforeach
             </tbody>

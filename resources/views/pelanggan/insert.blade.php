@@ -1,8 +1,9 @@
 @extends('admin.layout')
 @section('conten')
+
 <h1>Tambah Pelanggan</h1>
 <hr>
-<form class action="/savepelanggan" method="post" enctype="multipart/form-data">
+<form action="/savepelanggan" method="post" enctype="multipart/form-data">
     @csrf
   <div>
     <label for="namap" class="form-label">Nama Pelanggan</label>
@@ -13,6 +14,7 @@
       @enderror
     </div>
   </div>
+
   <div>
     <label for="no" class="form-label">No. Whatsapp</label>
     <input type="text" class="form-control" id="no" name="no" placeholder="Masukan No. Whatsapp" value="{{old('no')}}">
@@ -22,6 +24,7 @@
       @enderror
     </div>
   </div>
+
   <div>
     <label for="jenisk" class="form-label">Jenis Kelamin</label>
     <select id="jenisk" name="jenisk" class="form-control" value="{{old('jenisk')}}">
@@ -33,8 +36,9 @@
         @error('jenisk')
           {{$message}}
         @enderror
+        </div>
     </div>
-    </div>
+
     <div>
         <label for="alamatt" class="form-label">Alamat</label>
         <input type="text" class="form-control" id="alamatt" name="alamatt" placeholder="Alamat" value="{{old('alamatt')}}">
@@ -44,6 +48,7 @@
           @enderror
         </div>
       </div>
+
     <div>
         <label for="kota" class="form-label">Kota</label>
         <input type="text" class="form-control" id="kota" name="kota" placeholder="Kota" value="{{old('kota')}}">

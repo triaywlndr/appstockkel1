@@ -34,7 +34,7 @@ class PelangganController extends Controller
                 'namap'=>['required'],
                 'no'=>['required'],
                 'jenisk'=>['required'],
-                'alamat'=>['required'],
+                'alamatt'=>['required'],
                 'kota'=>['required'],
                 'provinsi'=>['required'],
             ],
@@ -77,7 +77,8 @@ class PelangganController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pelanggan = Pelanggan::find($id);
+        return view('pelanggan.edit', compact('pelanggan'));
     }
 
     /**
@@ -85,7 +86,39 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+            [
+                'namap'=>['required'],
+                'no'=>['required'],
+                'jenisk'=>['required'],
+                'alamatt'=>['required'],
+                'kota'=>['required'],
+                'provinsi'=>['required'],
+            ],
+            [
+                'namap.required'=>'Nama kosong',
+                'no.required'=>'Nomor kosong',
+                'jenisk.required'=>'Jenis Kelamin kosong',
+                'alamatt.required'=>'Alamat kosong',
+                'kota.required'=>'Kota kosong',
+                'provinsi.required'=>'Provinsi kosong'
+            ]
+        );
+
+        $pelanggan = Pelanggan::find($id);
+        $pelanggan-> namap=$request ['namap'];
+        $pelanggan-> no=$request ['no'];
+        $pelanggan-> jenisk=$request ['jenisk'];
+        $pelanggan-> alamatt=$request ['alamatt'];
+        $pelanggan-> kota=$request ['kota'];
+        $pelanggan-> provinsi=$request ['provinsi'];
+        $pelanggan-> save();
+
+        if ($pelanggan) {
+            return redirect('/pelanggan')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahpelanggan')->with('status', 'Data Gagal');
+        }
     }
 
     /**
@@ -93,6 +126,7 @@ class PelangganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Pelanggan::destroy('id',$id);
+        return redirect('/pelanggan');
     }
 }

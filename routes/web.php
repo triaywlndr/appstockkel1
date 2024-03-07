@@ -52,4 +52,4 @@ Route::get('/tambahpelanggan', [App\Http\Controllers\PelangganController::class,
 Route::post('/savepelanggan', [App\Http\Controllers\PelangganController::class, 'store']);
 Route::get('/editpelanggan/{id}', [App\Http\Controllers\PelangganController::class, 'edit']);
 Route::put('/updatepelanggan/{id}', [App\Http\Controllers\PelangganController::class, 'update']);
-Route::get('/deletee', [App\Http\Controllers\PelangganController::class, 'destroy']);
+Route::get('/deletee/{id}', [App\Http\Controllers\PelangganController::class, 'destroy']);
