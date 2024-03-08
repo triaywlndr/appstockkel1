@@ -35,14 +35,14 @@ class StockController extends Controller
             [
                 'kode'=>['required'],
                 'namab'=>['required'],
-                'harga'=>['required'],
-                'stock'=>['required'],
-                'supplier'=>['required'],
+                'harga'=>['required', 'numeric'],
+                'stock'=>['required', 'numeric'],
             ],
             [
-                'nama.required'=>'Nama kosong',
-                'nomor.required'=>'Nomor kosong',
-                'alamat.required'=>'Alamat kosong'
+                'kode'=>'Kode Kosong',
+                'namab'=>'Nama Kosong',
+                'harga'=>'Harga Kosong', 'Harga Harus Nomor',
+                'stock'=>'Kode Kosong', 'Stock Harus Nomor',
             ]
         );
 
@@ -51,7 +51,6 @@ class StockController extends Controller
         $stock-> namab=$request ['namab'];
         $stock-> harga=$request ['harga'];
         $stock-> stock=$request ['stock'];
-        $stock-> supplier_id=$request ['supplier_stock'];
         $stock-> save();
 
         if ($stock) {

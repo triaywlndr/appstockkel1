@@ -13,7 +13,6 @@
                     <th scope="col">Nama Barang</th>
                     <th scope="col">Harga</th>
                     <th scope="col">Stock</th>
-                    <th scope="col">Supplier</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -26,7 +25,6 @@
                     <td>{{$stck->namab }}</td>
                     <td>{{$stck->harga }}</td>
                     <td>{{$stck->stock }}</td>
-                    <td>{{$stck->Supplier->nama }}</td>
                     <td><a href="/editstock/{{$stck->id}}" class="btn btn-success">Edit</a></td>
                     <td><a href="/delete/{{$stck->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
@@ -34,7 +32,7 @@
             </tbody>
         </table>
         <hr>
-        <a href="/tambahstock" class="btn btn-primary">Tambah Supplier</a>
+        <a href="/tambahstock" class="btn btn-primary">Tambah Stock</a>
     </div>
     </div>
     </div>

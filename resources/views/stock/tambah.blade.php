@@ -2,7 +2,7 @@
 @section('conten')
 <h1>Tambah Stock</h1>
 <hr>
-<form class action="/tambahstock" method="post" enctype="multipart/form-data">
+<form action="/savestock" method="post" enctype="multipart/form-data">
     @csrf
   <div>
     <label for="kode" class="form-label">Kode Barang</label>
@@ -40,18 +40,7 @@
       @enderror
     </div>
   </div>
-  <div>
-    <label for="supplier_stock" class="form-label">Harga Barang</label>
-    <input type="text" class="form-control" id="supplier_stock" name="supplier_stock" value="{{old('supplier_stock')}}">
-    @foreach ($supplier as $spll)
-    <option value="{{$spll->id}}">{{$spll->nama}}</option>
-    @endforeach
-    <div style=color:red>
-      @error('supplier_stock')
-          {{$message}}
-      @enderror
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+      <hr>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection
