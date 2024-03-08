@@ -28,10 +28,13 @@
 
   <div>
     <label for="jenisk" class="form-label">Jenis Kelamin</label>
-    <select id="jenisk" name="jenisk" class="form-control" value="{{$pelanggan->jenisk}}">
-      <option value="">-- Pilih Kelamin --</option>
-      <option value="Laki-Laki">Laki-Laki</option>
+    <select id="jenisk" name="jenisk" class="form-control">
+      @if ($pelanggan->jenisk == "{{$pelanggan->jenisk}}")
+      @else
+      <option value="{{$pelanggan->jenisk}}">{{$pelanggan->jenisk}}</option>
       <option value="Perempuan">Perempuan</option>
+      <option value="Laki-Laki">Laki-Laki</option>
+      @endif
     </select>
     <div style="color:red">
         @error('jenisk')
