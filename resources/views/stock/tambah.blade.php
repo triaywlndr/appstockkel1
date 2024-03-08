@@ -42,7 +42,7 @@
   </div>
   <div>
     <label for="supplier_stock" class="form-label">Harga Barang</label>
-    <input type="text" class="form-control" id="supplier_stock" name="supplier_stock" placeholder="Masukan Harga" value="{{old('supplier_stock')}}">
+    <input type="text" class="form-control" id="supplier_stock" name="supplier_stock" value="{{old('supplier_stock')}}">
     @foreach ($supplier as $spll)
     <option value="{{$spll->id}}">{{$spll->nama}}</option>
     @endforeach

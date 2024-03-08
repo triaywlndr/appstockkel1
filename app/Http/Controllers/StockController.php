@@ -23,7 +23,7 @@ class StockController extends Controller
     public function create()
     {
         $supplier = Supplier::all();
-        return view('stock.tambah');
+        return view('stock.tambah', compact('supplier'));
     }
 
     /**
