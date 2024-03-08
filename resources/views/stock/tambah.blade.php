@@ -5,28 +5,49 @@
 <form class action="/tambahstock" method="post" enctype="multipart/form-data">
     @csrf
   <div>
-    <label for="nama" class="form-label">Nama Supplier</label>
-    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama stock" value="{{old('nama')}}">
+    <label for="kode" class="form-label">Kode Barang</label>
+    <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukan Kode Barang" value="{{old('kode')}}">
     <div style=color:red>
-      @error('nama')
+      @error('kode')
           {{$message}}
       @enderror
     </div>
   </div>
   <div>
-    <label for="nomor" class="form-label">No. Whatsapp</label>
-    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan No. Whatsapp" value="{{old('nomor')}}">
+    <label for="namab" class="form-label">Nama Barang</label>
+    <input type="text" class="form-control" id="namab" name="namab" placeholder="Masukan Nama Barang" value="{{old('namab')}}">
     <div style=color:red>
-      @error('nomor')
+      @error('namab')
           {{$message}}
       @enderror
     </div>
   </div>
   <div>
-    <label for="alamat" class="form-label">Alamat Perusahaan</label>
-    <textarea name="alamat" class="form-control" id="alamat" name="alamat" cols="30" rows="10" value="{{old('alamat')}}"></textarea>
+    <label for="harga" class="form-label">Jumlah Harga</label>
+    <input type="text" class="form-control" id="harga" name="harga" placeholder="Masukan Harga" value="{{old('harga')}}">
     <div style=color:red>
-      @error('alamat')
+      @error('harga')
+          {{$message}}
+      @enderror
+    </div>
+  </div>
+  <div>
+    <label for="stock" class="form-label">Jumlah Stock</label>
+    <input type="text" class="form-control" id="stock" name="stock" placeholder="Masukan Jumlah Stock" value="{{old('stock')}}">
+    <div style=color:red>
+      @error('namab')
+          {{$message}}
+      @enderror
+    </div>
+  </div>
+  <div>
+    <label for="supplier_stock" class="form-label">Harga Barang</label>
+    <input type="text" class="form-control" id="supplier_stock" name="supplier_stock" placeholder="Masukan Harga" value="{{old('supplier_stock')}}">
+    @foreach ($supplier as $spll)
+    <option value="{{$spll->id}}">{{$spll->nama}}</option>
+    @endforeach
+    <div style=color:red>
+      @error('supplier_stock')
           {{$message}}
       @enderror
     </div>

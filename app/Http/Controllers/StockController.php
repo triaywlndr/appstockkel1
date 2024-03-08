@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Supplier;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
@@ -20,6 +22,7 @@ class StockController extends Controller
      */
     public function create()
     {
+        $supplier = Supplier::all();
         return view('stock.tambah');
     }
 
@@ -30,9 +33,11 @@ class StockController extends Controller
     {
         $request->validate(
             [
-                'nama'=>['required'],
-                'nomor'=>['required'],
-                'alamat'=>['required']
+                'kode'=>['required'],
+                'namab'=>['required'],
+                'harga'=>['required'],
+                'stock'=>['required'],
+                'supplier'=>['required'],
             ],
             [
                 'nama.required'=>'Nama kosong',
@@ -46,13 +51,13 @@ class StockController extends Controller
         $stock-> namab=$request ['namab'];
         $stock-> harga=$request ['harga'];
         $stock-> stock=$request ['stock'];
-        $stock-> supplier_id=$request ['supplier'];
+        $stock-> supplier_id=$request ['supplier_stock'];
         $stock-> save();
 
-        if ($supplier) {
-            return redirect('/supplier')->with('status', 'Data telah ditambahkan');
+        if ($stock) {
+            return redirect('/stock')->with('status', 'Data telah ditambahkan');
         } else {
-            return redirect('/tambahsupplier')->with('status', 'Data Gagal');
+            return redirect('/tambahstock')->with('status', 'Data Gagal');
         }
     }
 
