@@ -20,18 +20,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($bmasuks as $table)
+                @foreach ($bmasuks as $bm)
                  <tr>
-                    <th>:create('bmasuks', function (Blueprint $table)</th>
-                    <td>$table->id();</td>
-                    <td>$table->date('tgl');</td>
-                    <td>$table->foreignId('stock_id');</td>
-                    <td>$table->integer('harga');</td>
-                    <td>$table->integer('jumlah');</td>
-                    <td>$table->foreignId('supplier_id');</td>
-                    <td>$table->timestamps();</td>
-                    <td><a href="/editpelanggan/{{$plggn->id}}" class="btn btn-success">Edit</a></td>
-                    <td><a href="/deletee/{{$plggn->id}}" class="btn btn-danger">Delete</a></td>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{{$bm->tglf }}</td>
+                    <td>{{$bm->stock_stock }}</td>
+                    <td>{{$bm->supplier_id }}</td>
+                    <td>{{$bm->mharga }}</td>
+                    <td>{{$bm->mjumlah }}</td>
+                    <td>{{$bm->kota }}</td>
+                    <td>{{$bm->tgld}}</td>
+                    <td><a href="/editbnasuk/{{$bm->id}}" class="btn btn-success">Edit</a></td>
+                    <td><a href="/deletep/{{$bm->id}}" class="btn btn-danger">Delete</a></td>
+                </tr>   
                 </tr>   
                 @endforeach
             </tbody>

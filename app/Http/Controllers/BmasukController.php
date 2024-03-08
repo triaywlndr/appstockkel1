@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bmasuk;
 use Illuminate\Http\Request;
 
 class BmasukController extends Controller
@@ -11,7 +12,9 @@ class BmasukController extends Controller
      */
     public function index()
     {
-        //
+        
+        $bmasuk = Bmasuk::all();
+        return view('barangmasuk.bmasuk', compact('bmasuk'));
     }
 
     /**

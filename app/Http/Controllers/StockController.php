@@ -114,6 +114,7 @@ class StockController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Stock::destroy('id',$id);
+        return redirect('/stock');
     }
 }
