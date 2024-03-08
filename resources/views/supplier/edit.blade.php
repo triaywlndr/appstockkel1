@@ -25,7 +25,7 @@
   </div>
   <div>
     <label for="alamat" class="form-label">Alamat Perusahaan</label>
-    <textarea name="alamat" class="form-control" id="alamat" name="alamat" cols="30" rows="10" value="{{$supplier->alamat}}"></textarea>
+    <textarea name="alamat" class="form-control" id="alamat" name="alamat" cols="30" rows="10">{{$supplier->alamat}}</textarea>
     <div style=color:red>
       @error('alamat')
           {{$message}}
