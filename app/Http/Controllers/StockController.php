@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Supplier;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 
@@ -22,8 +21,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        $supplier = Supplier::all();
-        return view('stock.tambah', compact('supplier'));
+        return view('stock.tambah');
     }
 
     /**
@@ -73,7 +71,8 @@ class StockController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $stock = Stock::find($id);
+        return view('stock.edit', compact('stock'));
     }
 
     /**
@@ -81,7 +80,33 @@ class StockController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+        [
+            'kode'=>['required'],
+            'namab'=>['required'],
+            'harga'=>['required', 'numeric'],
+            'stock'=>['required', 'numeric'],
+        ],
+        [
+            'kode'=>'Kode Kosong',
+            'namab'=>'Nama Kosong',
+            'harga'=>'Harga Kosong', 'Harga Harus Nomor',
+            'stock'=>'Kode Kosong', 'Stock Harus Nomor',
+        ]
+    );
+
+    $stock = Stock::find($id);
+    $stock-> kode=$request ['kode'];
+    $stock-> namab=$request ['namab'];
+    $stock-> harga=$request ['harga'];
+    $stock-> stock=$request ['stock'];
+    $stock-> save();
+
+    if ($stock) {
+        return redirect('/stock')->with('status', 'Data telah ditambahkan');
+    } else {
+        return redirect('/updatestock')->with('status', 'Data Gagal');
+    }
     }
 
     /**
