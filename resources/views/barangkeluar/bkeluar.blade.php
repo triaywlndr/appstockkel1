@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($bkeluars as $bm)
+                @foreach ($bkeluar as $bm)
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$bm->tglf }}</td>
@@ -38,7 +38,7 @@
             </tbody>
         </table>
         <hr>
-        <a href="/tambahpelanggan" class="btn btn-primary">Tambah barang keluar</a>
+        <a href="/tambahbkeluar" class="btn btn-primary">Tambah barang keluar</a>
     </div>
     </div>
     </div>

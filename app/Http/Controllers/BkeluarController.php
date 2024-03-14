@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bkeluar;
 use Illuminate\Http\Request;
 
 class BkeluarController extends Controller
@@ -11,7 +12,9 @@ class BkeluarController extends Controller
      */
     public function index()
     {
-        //
+        
+        $bkeluar = Bkeluar::all();
+        return view('barangkeluar.bkeluar', compact('bkeluar'));
     }
 
     /**

@@ -65,7 +65,7 @@
     </div>
     <div>
         <label for="tanggal" class="form-label">Tanggal Dibuat</label>
-        <input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="tanggal" value="{{old('tanggaldibuat')}}">
+        <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="tanggal" value="{{old('tanggaldibuat')}}">
         <div style=color:red>
           @error('tanggal')
               {{$message}}
