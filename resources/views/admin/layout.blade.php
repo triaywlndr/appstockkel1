@@ -63,6 +63,30 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/recap" class="nav-link text-white">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Recap
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/bmasuk" class="nav-link text-white">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Barang masuk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/bkeluar" class="nav-link text-white">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#people-circle"></use>
+                            </svg>
+                            Barang keluar
+                        </a>
+                    </li>
+                    <li>
                         <a href="/stock" class="nav-link text-white">
                             <svg class="bi pe-none me-2" width="16" height="16">
                                 <use xlink:href="#people-circle"></use>

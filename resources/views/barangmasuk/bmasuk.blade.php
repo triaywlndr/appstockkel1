@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($bmasuks as $bm)
+                @foreach ($bmasuk as $bm)
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$bm->tglf }}</td>
@@ -30,7 +30,7 @@
                     <td>{{$bm->mjumlah }}</td>
                     <td>{{$bm->kota }}</td>
                     <td>{{$bm->tgld}}</td>
-                    <td><a href="/editbnasuk/{{$bm->id}}" class="btn btn-success">Edit</a></td>
+                    <td><a href="/editbmasuk/{{$bm->id}}" class="btn btn-success">Edit</a></td>
                     <td><a href="/deletep/{{$bm->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
                 </tr>   
@@ -38,7 +38,7 @@
             </tbody>
         </table>
         <hr>
-        <a href="/tambahpelanggan" class="btn btn-primary">Tambah barang masuk</a>
+        <a href="/tambahbmasuk" class="btn btn-primary">Tambah barang masuk</a>
     </div>
     </div>
     </div>
