@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($bkeluars as $bm)
+                @foreach ($bkeluar as $bm)
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$bm->tglf }}</td>
