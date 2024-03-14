@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bmasuk;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class BmasukController extends Controller
@@ -22,7 +23,8 @@ class BmasukController extends Controller
      */
     public function create()
     {
-        //
+        $supplier = Supplier::all();
+        return view('barangmasuk.insert', compact('supplier'));
     }
 
     /**
