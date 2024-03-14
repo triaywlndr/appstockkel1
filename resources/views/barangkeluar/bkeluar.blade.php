@@ -38,7 +38,7 @@
             </tbody>
         </table>
         <hr>
-        <a href="/tambahpelanggan" class="btn btn-primary">Tambah barang keluar</a>
+        <a href="/tambahbkeluar" class="btn btn-primary">Tambah barang keluar</a>
     </div>
     </div>
     </div>
