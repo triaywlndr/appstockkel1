@@ -25,9 +25,17 @@ class BmasukController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
+        
+=======
         $supplier = Supplier::all();
+<<<<<<< HEAD
         $stock = Stock::all();
         return view('barangmasuk.insert', compact('supplier', 'stock'));
+=======
+        return view('barangmasuk.insert', compact('supplier'));
+>>>>>>> 58e21f20cadb92a5e552486092cd3733abf9ba9b
+>>>>>>> a5ed3759e98bccd06a14c398d847a8444497f198
     }
 
     /**
