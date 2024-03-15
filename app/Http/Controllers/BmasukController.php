@@ -83,7 +83,8 @@ class BmasukController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $bmasuk = Bmasuk::find($id);
+        return view('barangmasuk.edit', compact('bmasuk'));
     }
 
     /**
@@ -91,7 +92,39 @@ class BmasukController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+            [
+                'tglf'=>['required'],
+                'stock_id'=>['required'],
+                'supplier_id'=>['required'],
+                'mharga'=>['required'],
+                'mjumlah'=>['required'],
+                'tgld'=>['required'],
+            ],
+            [
+                'tglf'=>'Tanggal Faktur Kosong',
+                'stock_id'=>'Nama Barang Kosong',
+                'supplier_id'=>'Supplier Kosong',
+                'mharga'=>'Harga Kosong',
+                'mjumlah'=>'Jumlah Kosong',
+                'tgld'=>'Tanggal Dibuat Kosong',
+            ]
+        );
+
+        $bmasuk = Bmasuk::find($id);
+        $bmasuk-> tglf=$request ['tglf'];
+        $bmasuk-> stock_id=$request ['stock_id'];
+        $bmasuk-> supplier_id=$request ['supplier_id'];
+        $bmasuk-> mharga=$request ['mharga'];
+        $bmasuk-> mjumlah=$request ['mjumlah'];
+        $bmasuk-> tgld=$request ['tgld'];
+        $bmasuk-> save();
+
+        if ($bmasuk) {
+            return redirect('/bmasuk')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/editbmasuk/{id}')->with('status', 'Data Gagal');
+        }
     }
 
     /**
@@ -99,6 +132,7 @@ class BmasukController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Bmasuk::find($id);
+        return redirect('/bmasuk');
     }
 }
