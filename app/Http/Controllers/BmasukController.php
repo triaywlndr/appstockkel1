@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stock;
 use App\Models\Bmasuk;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
@@ -13,7 +14,8 @@ class BmasukController extends Controller
      */
     public function index()
     {
-        
+        $stock = Stock::all();
+        $supplier = Supplier::all();
         $bmasuk = Bmasuk::all();
         return view('barangmasuk.bmasuk', compact('bmasuk'));
     }
@@ -24,7 +26,8 @@ class BmasukController extends Controller
     public function create()
     {
         $supplier = Supplier::all();
-        return view('barangmasuk.insert', compact('supplier'));
+        $stock = Stock::all();
+        return view('barangmasuk.insert', compact('supplier', 'stock'));
     }
 
     /**
@@ -32,7 +35,39 @@ class BmasukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'tglf'=>['required'],
+                'stock_id'=>['required'],
+                'supplier_id'=>['required'],
+                'mharga'=>['required'],
+                'mjumlah'=>['required'],
+                'tgld'=>['required'],
+            ],
+            [
+                'tglf'=>'Tanggal Faktur Kosong',
+                'stock_id'=>'Nama Barang Kosong',
+                'supplier_id'=>'Supplier Kosong',
+                'mharga'=>'Harga Kosong',
+                'mjumlah'=>'Jumlah Kosong',
+                'tgld'=>'Tanggal Dibuat Kosong',
+            ]
+        );
+
+        $bmasuk = new Bmasuk;
+        $bmasuk-> tglf=$request ['tglf'];
+        $bmasuk-> stock_id=$request ['stock_id'];
+        $bmasuk-> supplier_id=$request ['supplier_id'];
+        $bmasuk-> mharga=$request ['mharga'];
+        $bmasuk-> mjumlah=$request ['mjumlah'];
+        $bmasuk-> tgld=$request ['tgld'];
+        $bmasuk-> save();
+
+        if ($bmasuk) {
+            return redirect('/bmasuk')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahbmasuk')->with('status', 'Data Gagal');
+        }
     }
 
     /**
