@@ -13,7 +13,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Supplier</th>
                     <th scope="col">Harga Beli</th>
-                    <th scope="col">Jumlah Masuk</th>
+                    <th scope="col">Jumlah Keluar</th>
                     <th scope="col">Tanggal Dibuat</th>
                     <th scope="col">Admin</th>
                     <th scope="col">Cabang</th>

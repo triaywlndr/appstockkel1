@@ -22,7 +22,7 @@ class BmasukController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

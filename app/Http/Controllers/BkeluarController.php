@@ -22,7 +22,8 @@ class BkeluarController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('barangkeluar.insert');
     }
 
     /**
@@ -30,7 +31,41 @@ class BkeluarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate(
+            [
+                'stock_id'=>['required'],
+                'faktur'=>['required'],
+                'tempo'=>['required'],
+                'pelanggan_id'=>['required'],
+                'kota'=>['required'],
+                'pembayaran'=>['required'],
+            ],
+            [
+                'stock_id.required'=>'stock kosong',
+                'faktur'=>'faktor kosong',
+                'tempo.required'=>'tempo kosong',
+                'pelanggan_id.required'=>'pelanggan kosong',
+                'pembayaran.required'=>'pembayaran kosong',
+
+            ]
+        );
+
+        $bkeluar = new bkeluar;
+        $bkeluar-> namap=$request ['stock_id'];
+        $bkeluar-> no=$request ['faktur'];
+        $bkeluar-> jenisk=$request ['tempo'];
+        $bkeluar-> alamatt=$request ['pelanggan_id'];
+        $bkeluar-> kota=$request ['pembayaran'];
+        $bkeluar-> save();
+
+        if ($bkeluar) {
+            return redirect('/bkeluar')->with('status', 'Data telah ditambahkan');
+        } else {
+            return redirect('/tambahbkeluar')->with('status', 'Data Gagal');
+        }
+    }
+
     }
 
     /**
@@ -46,7 +81,10 @@ class BkeluarController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+        $bkeluar = Bkeluar::find($id);
+        return view('barangkeluar.edit', compact('bkeluar'));
+
     }
 
     /**
@@ -54,7 +92,41 @@ class BkeluarController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+      {  
+        $request->validate(
+            [
+                'stock_id'=>['required'],
+                'faktur'=>['required'],
+                'tempo'=>['required'],
+                'pelanggan_id'=>['required'],
+                'pembayaran'=>['required'],
+               
+            ],
+            [
+                'stock_id.required'=>'stock kosong',
+                'faktur.required'=>'faktor kosong',
+                'tempo.required'=>'tempo kosong',
+                'pelanggan_id.required'=>'pelanggan kosong',
+                'pembayaran.required'=>'pembayaran kosong',
+                
+            ]
+        );
+
+        $bkeluar =  Bkeluar::find($id);
+        $bkeluar -> stock_id=$request ['stock_id'];
+        $bkeluar -> faktur=$request ['faktur'];
+        $bkeluar -> tempo=$request ['tempo'];
+        $bkeluar -> pelanggan_idt=$request ['pelanggan_id'];
+        $bkeluar-> pembayaran=$request ['pembayaran'];
+        $pelanggan-> save();
+
+        if ($bkeluar) {
+            return redirect('/bkeluar')->with('status', 'Data telah ditambahkan');
+        } else 
+        {
+            return redirect('/tambahbkeluar')->with('status', 'Data Gagal');
+        }
+    
     }
 
     /**
@@ -62,6 +134,8 @@ class BkeluarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
+        Bkeluar::destroy('id',$id);
+        return redirect('/bkeluar');
     }
-}
+ }
