@@ -64,8 +64,7 @@ class BkeluarController extends Controller
         } else {
             return redirect('/tambahbkeluar')->with('status', 'Data Gagal');
         }
-    }
-
+    
     }
 
     /**
@@ -91,8 +90,7 @@ class BkeluarController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-      {  
+    { 
         $request->validate(
             [
                 'stock_id'=>['required'],
