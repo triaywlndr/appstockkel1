@@ -16,7 +16,6 @@
                     <th scope="col">Jumlah Keluar</th>
                     <th scope="col">Tanggal Dibuat</th>
                     <th scope="col">Admin</th>
-                    <th scope="col">Cabang</th>
                 </tr>
             </thead>
             <tbody>

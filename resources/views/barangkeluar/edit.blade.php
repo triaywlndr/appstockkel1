@@ -81,14 +81,6 @@
           @enderror
         </div>
     </div>
-    <div>
-        <label for="cabang" class="form-label">Cabang</label>
-        <input type="text" class="form-control" id="cabang" name="cabang" placeholder="cabang" value="{{old('cabang')}}">
-        <div style=color:red>
-          @error('cabang')
-              {{$message}}
-          @enderror
-        </div>
     </div>
       <hr>
     <button type="submit" class="btn btn-primary">Submit</button>
