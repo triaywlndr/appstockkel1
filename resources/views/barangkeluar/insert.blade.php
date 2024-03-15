@@ -4,17 +4,7 @@
 <h1>Riwayat Barang Keluar</h1>
 <hr>
 <form action="/savepelanggan" method="post" enctype="multipart/form-data">
-    @csrf
-  <div>
-    <label for="nomor" class="form-label">No</label>
-    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan No" value="{{old('no')}}">
-    <div style=color:red>
-      @error('nomor')
-          {{$message}}
-      @enderror
-    </div>
-  </div>
-
+    @csrf  
   <div>
     <label for="nomor" class="form-label">Tanggal Faktur</label>
     <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
@@ -80,7 +70,6 @@
               {{$message}}
           @enderror
         </div>
-    </div>
     </div>
       <hr>
     <button type="submit" class="btn btn-primary">Submit</button>
