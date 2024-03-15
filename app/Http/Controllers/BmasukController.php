@@ -83,8 +83,10 @@ class BmasukController extends Controller
      */
     public function edit(string $id)
     {
+        $supplier = Supplier::all();
+        $stock = Stock::all();
         $bmasuk = Bmasuk::find($id);
-        return view('barangmasuk.edit', compact('bmasuk'));
+        return view('barangmasuk.edit', compact('bmasuk','supplier','stock'));
     }
 
     /**
