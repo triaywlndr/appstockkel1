@@ -15,6 +15,7 @@
                     <th scope="col">Harga Beli</th>
                     <th scope="col">Jumlah Masuk</th>
                     <th scope="col">Tanggal Dibuat</th>
+                    <th scope="col">Admin</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,7 @@
                     <td>{{$bm->mharga }}</td>
                     <td>{{$bm->mjumlah }}</td>
                     <td>{{$bm->tgld}}</td>
+                    <td></td>
                     <td><a href="/editbmasuk/{{$bm->id}}" class="btn btn-success">Edit</a></td>
                     <td><a href="/deletep/{{$bm->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
