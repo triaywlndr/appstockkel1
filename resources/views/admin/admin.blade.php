@@ -1,44 +1,29 @@
 @extends('admin.layout')
 @section('conten')
-
-<div class="container">
-            <div class="card-body">
-            <h1 class="card-title">Data Admin</h1>
-            </div>
-            <hr>
-              <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Jabatan</th>
-                  <th scope="col">Cabang</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="col">Rizky</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="col">Edwar</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="col">Ayu</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-            <hr>
+    <div class="container">
+        <div class="card-body">
+            <h1 class="card-title">Data Stock</h1>
         </div>
+        <hr>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Kode</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  -->
+            </tbody>
+        </table>
+        <hr>
+        <a href="/register" class="btn btn-primary">Tambah Admin</a>
     </div>
-</div>
-
+    </div>
+    </div>
 @endsection
