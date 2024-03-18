@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li>
-                        <li class="nav-item dropdown">
+                        <li  class="nav-link text-white">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                               Barang
                             </a>
@@ -81,7 +81,6 @@
                             <svg class="bi pe-none me-2" width="16" height="16">
                                 <use xlink:href="#people-circle"></use>
                             </svg>
-                            Barang keluar
                         </a>
                     </li>
                     <li>
@@ -89,7 +88,6 @@
                             <svg class="bi pe-none me-2" width="16" height="16">
                                 <use xlink:href="#people-circle"></use>
                             </svg>
-                            Stock
                         </a>
                     </li>
                 </ul>
