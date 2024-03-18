@@ -19,18 +19,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($bkeluar as $bm)
+                @foreach ($bkeluar as $bk)
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
-                    <td>{{$bm->tglf }}</td>
-                    <td>{{$bm->stock_stock }}</td>
-                    <td>{{$bm->supplier_id }}</td>
-                    <td>{{$bm->mharga }}</td>
-                    <td>{{$bm->mjumlah }}</td>
-                    <td>{{$bm->kota }}</td>
-                    <td>{{$bm->tgld}}</td>
-                    <td><a href="/editbkeluar/{{$bm->id}}" class="btn btn-success">Edit</a></td>
-                    <td><a href="/deletew/{{$bm->id}}" class="btn btn-danger">Delete</a></td>
+                    <td>{{$bk->tglf }}</td>
+                    <td>{{$bk->stock_stock }}</td>
+                    <td>{{$bk->supplier_id }}</td>
+                    <td>{{$bk->mharga }}</td>
+                    <td>{{$bk->mjumlah }}</td>
+                    <td>{{$bk->kota }}</td>
+                    <td>{{$bk->tgld}}</td>
+                    <td><a href="/editbkeluar/{{$bk->id}}" class="btn btn-success">Edit</a></td>
+                    <td><a href="/deletew/{{$bk->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
                 </tr>   
                 @endforeach

@@ -72,16 +72,6 @@
           @enderror
         </div>
     </div>
-    <div>
-        <label for="admin" class="form-label">Admin</label>
-        <input type="text" class="form-control" id="admin" name="admin" placeholder="admin" value="{{old('admin')}}">
-        <div style=color:red>
-          @error('admin')
-              {{$message}}
-          @enderror
-        </div>
-    </div>
-    </div>
       <hr>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

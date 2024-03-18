@@ -6,16 +6,6 @@
 <form action="/savepelanggan" method="post" enctype="multipart/form-data">
     @csrf
   <div>
-    <label for="nomor" class="form-label">No</label>
-    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan No" value="{{old('no')}}">
-    <div style=color:red>
-      @error('nomor')
-          {{$message}}
-      @enderror
-    </div>
-  </div>
-
-  <div>
     <label for="nomor" class="form-label">Tanggal Faktur</label>
     <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
     <div style=color:red>
@@ -71,16 +61,6 @@
               {{$message}}
           @enderror
         </div>
-    </div>
-    <div>
-        <label for="admin" class="form-label">Admin</label>
-        <input type="text" class="form-control" id="admin" name="admin" placeholder="admin" value="{{old('admin')}}">
-        <div style=color:red>
-          @error('admin')
-              {{$message}}
-          @enderror
-        </div>
-    </div>
     </div>
       <hr>
     <button type="submit" class="btn btn-primary">Submit</button>
