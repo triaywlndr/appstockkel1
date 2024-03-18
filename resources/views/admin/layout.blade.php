@@ -40,7 +40,7 @@
                     </li>
                     <li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                               Barang
                             </a>
                             <ul class="dropdown-menu">
@@ -75,14 +75,7 @@
                             Recap
                         </a>
                     </li>
-                    <li>
-                        <a href="/bmasuk" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#people-circle"></use>
-                            </svg>
-                            Barang masuk
-                        </a>
-                    </li>
+                    
                     <li>
                         <a href="/bkeluar" class="nav-link text-white">
                             <svg class="bi pe-none me-2" width="16" height="16">
