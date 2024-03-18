@@ -14,8 +14,6 @@ class BmasukController extends Controller
      */
     public function index()
     {
-        $stock = Stock::all();
-        $supplier = Supplier::all();
         $bmasuk = Bmasuk::all();
         return view('barangmasuk.bmasuk', compact('bmasuk'));
     }

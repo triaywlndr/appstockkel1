@@ -39,11 +39,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#table"></use>
-                            </svg>
-                            Barang
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Barang
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/stock">Stock</a></li>
+                              <li><a class="dropdown-item" href="/bmasuk">Barang Masuk</a></li>
+                              <li><a class="dropdown-item" href="/bkeluar">Barang Keluar</a></li>
+                            </ul>
+                          </li>
                         </a>
                     </li>
                     <li>
