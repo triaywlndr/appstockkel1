@@ -40,14 +40,14 @@
                     </li>
                     <li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                               Barang
                             </a>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="/stock">Stock</a></li>
-                              <li><a class="dropdown-item" href="/bmasuk">Barang Masuk</a></li>
-                              <li><a class="dropdown-item" href="/bkeluar">Barang Keluar</a></li>
-                            </ul>
+                                <li><a class="dropdown-item" href="/stock" aria-current="true">Stock</a></li>
+                                <li><a class="dropdown-item" href="/bmasuk" aria-current="true">Barang Masuk</a></li>
+                                <li><a class="dropdown-item" href="/bkeluar" aria-current="true">Barang Keluar</a></li>
+                              </ul>
                           </li>
                         </a>
                     </li>
