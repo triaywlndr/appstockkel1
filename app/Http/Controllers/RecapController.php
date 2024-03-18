@@ -11,7 +11,7 @@ class RecapController extends Controller
      */
     public function index()
     {
-        //
+        return view ('recap.recap');
     }
 
     /**

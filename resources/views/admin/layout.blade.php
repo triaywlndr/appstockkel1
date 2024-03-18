@@ -23,7 +23,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="#" class="nav-link text-white" aria-current="page">
                             <svg class="bi pe-none me-2" width="16" height="16">
                                 <use xlink:href="#home"></use>
                             </svg>
@@ -39,11 +39,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#table"></use>
-                            </svg>
-                            Barang
+                        <li  class="nav-link text-white">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                              Barang
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/stock" aria-current="true">Stock</a></li>
+                                <li><a class="dropdown-item" href="/bmasuk" aria-current="true">Barang Masuk</a></li>
+                                <li><a class="dropdown-item" href="/bkeluar" aria-current="true">Barang Keluar</a></li>
+                              </ul>
+                          </li>
                         </a>
                     </li>
                     <li>
@@ -70,29 +75,16 @@
                             Recap
                         </a>
                     </li>
+                    
                     <li>
-                        <a href="/bmasuk" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#people-circle"></use>
-                            </svg>
-                            Barang masuk
-                        </a>
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                        </svg>
+                    </a>
                     </li>
                     <li>
-                        <a href="/bkeluar" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#people-circle"></use>
-                            </svg>
-                            Barang keluar
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/stock" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#people-circle"></use>
-                            </svg>
-                            Stock
-                        </a>
+                        <svg class="bi pe-none me-2" width="16" height="16">
+                        </svg>
+                    </a>
                     </li>
                 </ul>
                 <hr>
