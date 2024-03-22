@@ -3,15 +3,11 @@
 
 <h1>Riwayat Barang Keluar</h1>
 <hr>
-<form action="/savepelanggan" method="post" enctype="multipart/form-data">
-<<<<<<< HEAD
-    @csrf
-=======
-    @csrf  
->>>>>>> 17002dec58ba394fc430690aa39e68cb1e7fdc8b
+<form action="/savepelanggan" method="post" enctype="multipart/form-data">    
+     @csrf
   <div>
     <label for="nomor" class="form-label">Tanggal Faktur</label>
-    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
+    <input type="date" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
     <div style=color:red>
       @error('nomor')
           {{$message}}
