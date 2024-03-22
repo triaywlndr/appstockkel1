@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('bkeluars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tglf_id');
             $table->foreignId('stock_id');
-            $table->date('faktur');
-            $table->date('tempo');
+            $table->integer('kharga');
+            $table->foreignId('pelanggan_id');
             $table->foreignId('pelanggan_id');
             $table->enum('pembayaran',['Cash','Kredit']);
             $table->timestamps();
