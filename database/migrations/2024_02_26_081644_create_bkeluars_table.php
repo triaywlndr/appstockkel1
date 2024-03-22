@@ -16,6 +16,7 @@ return new class extends Migration
             $table->date('ktglf');
             $table->foreignId('stock_id');
             $table->integer('kjumlah');
+            $table->integer('subtotal');
             $table->foreignId('pelanggan_id');
             $table->enum('pembayaran',['Cash','Kredit']);
             $table->timestamps();
