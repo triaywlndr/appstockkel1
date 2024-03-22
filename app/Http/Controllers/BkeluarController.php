@@ -26,8 +26,9 @@ class BkeluarController extends Controller
      */
     public function create()
     {
-        
-        return view('barangkeluar.insert');
+        $pelanggan = Stock::all();
+        $stock = Stock::all();
+        return view('barangkeluar.insert', compact('stock', 'pelanggan'));
     }
 
     /**

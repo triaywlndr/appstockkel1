@@ -11,23 +11,21 @@
                     <th scope="col">No</th>
                     <th scope="col">Tanggal Faktur</th>
                     <th scope="col">Barang</th>
-                    <th scope="col">Harga</th>
                     <th scope="col">Jumlah</th>
                     <th scope="col">Subtotal</th>
-                    <th scope="col">Tanggal Dibuat</th>
+                    <th scope="col">Pelanggan</th>
+                    <th scope="col">Pembayaran</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($bkeluar as $bk)
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
-                    <td>{{$bk->tglf_id }}</td>
+                    <td>{{$bk->ktglf}}</td>
                     <td>{{$bk->stock_id }}</td>
-                    <td>{{$bk->supplier_id }}</td>
-                    <td>{{$bk->mharga }}</td>
-                    <td>{{$bk->mjumlah }}</td>
-                    <td>{{$bk->kota }}</td>
-                    <td>{{$bk->tgld}}</td>
+                    <td>{{$bk->kjumlah }}</td>
+                    <td>{{$bk->pelanggan_id }}</td>
+                    <td>{{$bk->pembayaran }}</td>
                     <td><a href="/editbkeluar/{{$bk->id}}" class="btn btn-success">Edit</a></td>
                     <td><a href="/deletew/{{$bk->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
