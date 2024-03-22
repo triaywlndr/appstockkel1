@@ -6,7 +6,7 @@
 <form action="/savebkeluar" method="post" enctype="multipart/form-data">
     @csrf
   <div>
-    <label for="Tanggal Faktur" class="form-label">Tanggal Faktur</label>
+    <label for="ktglf" class="form-label">Tanggal Faktur</label>
     <input type="date" class="form-control" id="nomor" name="ktglf" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
     <div style=color:red>
       @error('Tanggal Faktur')
@@ -14,18 +14,22 @@
       @enderror
     </div>
   </div>
-    <div>
-        <label for="Barang keluar" class="form-label">Supplier</label>
-        <input type="text" class="form-control" id="stock_id" name="stock_id" placeholder="stock_id" value="{{old('stock_id')}}">
-        <div style=color:red>
-          @error('stock_id')
-              {{$message}}
-          @enderror
-        </div>
+  <div>
+    <label for="stock_id" class="form-label">Nama barang</label>
+    <select id="stock_id" class="form-control" name="stock_id" value="{{old('stock_id')}}">
+    @foreach ($stock as $stck)
+    <option value="{{$stck->id}}">{{$stck->namab}}</option>
+    @endforeach
+    </select>
+    <div style=color:red>
+      @error('stock_id')
+          {{$message}}
+      @enderror
     </div>
+  </div>
     <div>
-        <label for="jumlah" class="form-label">Jumlah Masuk</label>
-        <input type="text" class="form-control" id="jumlah" name="kjumlah" placeholder="jumlah" value="{{old('jumlahkeluar')}}">
+        <label for="kjumlah" class="form-label">Jumlah</label>
+        <input type="text" class="form-control" id="kjumlah" name="kjumlah" placeholder="Jumlah" value="{{old('kjumlah')}}">
         <div style=color:red>
           @error('jumlahkeluar')
               {{$message}}
@@ -33,22 +37,30 @@
         </div>
     </div>
     <div>
-        <label for="Nama pelanggan" class="form-label">Nama pelanggan</label>
-        <input type="text" class="form-control" id="pelanggan_id" name="pelanggan_id" placeholder="tanggal" value="{{old('tanggaldibuat')}}">
-        <div style=color:red>
-          @error('Nama Pelanggan')
-              {{$message}}
-          @enderror
-        </div>
-        <div>
-        <label for="Metode pembayaran" class="form-label">Metode pembayaran</label>
-        <input type="text" class="form-control" id="Metode pembayaran" name="pembayaran" placeholder="Metode pembayaran" value="{{old('Metode pembayaran')}}">
-        <div style=color:red>
-          @error('Metode pembayaran')
-              {{$message}}
-          @enderror
-        </div>
+      <label for="pelanggan_id" class="form-label">Nama Pelanggan</label>
+      <select id="pelanggan_id" class="form-control" name="pelanggan_id" value="{{old('pelanggan_id')}}">
+      @foreach ($pelanggan as $plg)
+      <option value="{{$plg->id}}">{{$plg->namap}}</option>
+      @endforeach
+      </select>
+      <div style=color:red>
+        @error('stock_id')
+            {{$message}}
+        @enderror
+      </div>
     </div>
+        <div>
+          <label for="pembayaran" class="form-label">Metode Pembayaran</label>
+          <select id="pembayaran" name="pembayaran" class="form-control" value="{{old('pembayaran')}}">
+            <option value="Cash">Cash</option>
+            <option value="Kredit">Kredit</option>
+          </select>
+          <div style="color:red">
+              @error('jenisk')
+                {{$message}}
+              @enderror
+              </div>
+          </div>
       <hr>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -22,9 +22,10 @@
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$bk->ktglf}}</td>
-                    <td>{{$bk->stock_id }}</td>
+                    <td>{{$bk->stock->namab }}</td>
                     <td>{{$bk->kjumlah }}</td>
-                    <td>{{$bk->pelanggan_id }}</td>
+                    <td>{{$bk->subtotal }}</td>
+                    <td>{{$bk->pelanggan->namap }}</td>
                     <td>{{$bk->pembayaran }}</td>
                     <td><a href="/editbkeluar/{{$bk->id}}" class="btn btn-success">Edit</a></td>
                     <td><a href="/deletew/{{$bk->id}}" class="btn btn-danger">Delete</a></td>

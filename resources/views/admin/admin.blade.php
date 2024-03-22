@@ -11,8 +11,6 @@
                     <th scope="col">No</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Harga</th>
-                    <th scope="col">Stock</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                 </tr>

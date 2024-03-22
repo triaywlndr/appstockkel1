@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bkeluar;
+use App\Models\Stock;
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 
 class BkeluarController extends Controller
@@ -26,7 +28,7 @@ class BkeluarController extends Controller
      */
     public function create()
     {
-        $pelanggan = Stock::all();
+        $pelanggan = Pelanggan::all();
         $stock = Stock::all();
         return view('barangkeluar.insert', compact('stock', 'pelanggan'));
     }
