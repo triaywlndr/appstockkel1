@@ -3,8 +3,8 @@
 
 <h1>Riwayat Barang Keluar</h1>
 <hr>
-<form action="/savepelanggan" method="post" enctype="multipart/form-data">    
-     @csrf
+<form action="/savebkeluar" method="post" enctype="multipart/form-data">
+    @csrf
   <div>
     <label for="nomor" class="form-label">Tanggal Faktur</label>
     <input type="date" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
