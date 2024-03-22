@@ -23,7 +23,6 @@
           @enderror
         </div>
     </div>
-
     <div>
         <label for="nomor" class="form-label">Harga Beli</label>
         <input type="text" class="form-control" id="nomor" name="nomor" placeholder="nomor" value="{{old('hargabeli')}}">
