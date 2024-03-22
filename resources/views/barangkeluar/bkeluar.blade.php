@@ -15,7 +15,6 @@
                     <th scope="col">Jumlah</th>
                     <th scope="col">Subtotal</th>
                     <th scope="col">Tanggal Dibuat</th>
-                    <th scope="col">Admin</th>
                 </tr>
             </thead>
             <tbody>

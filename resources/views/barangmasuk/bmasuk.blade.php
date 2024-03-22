@@ -15,7 +15,6 @@
                     <th scope="col">Harga Beli</th>
                     <th scope="col">Jumlah Masuk</th>
                     <th scope="col">Tanggal Dibuat</th>
-                    <th scope="col">Admin</th>
                 </tr>
             </thead>
             <tbody>
