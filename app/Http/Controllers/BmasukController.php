@@ -65,6 +65,12 @@ class BmasukController extends Controller
         $bmasuk-> tgld=$request ['tgld'];
         $bmasuk-> save();
 
+        $idstock = $request ['stock_id'];
+        $updatestock = Stock::findOrfail($idstock);
+        $updatestock->update([
+            'stock' => $updatestock->stock + $request ['mjumlah'],
+        ]);
+        
         if ($bmasuk) {
             return redirect('/bmasuk')->with('status', 'Data telah ditambahkan');
         } else {
