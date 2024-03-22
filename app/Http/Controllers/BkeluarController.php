@@ -39,17 +39,16 @@ class BkeluarController extends Controller
         
         $request->validate(
             [
+                'ktglf'=>['required'],
                 'stock_id'=>['required'],
-                'faktur'=>['required'],
-                'tempo'=>['required'],
+                'kjumlah'=>['required'],
                 'pelanggan_id'=>['required'],
-                'kota'=>['required'],
                 'pembayaran'=>['required'],
             ],
             [
-                'stock_id.required'=>'stock kosong',
-                'faktur'=>'faktor kosong',
-                'tempo.required'=>'tempo kosong',
+                'ktglf.required'=>'Tanggal Faktur Kosong',
+                'stock_id.required'=>'Barang kosong',
+                'kjumlah.required'=>'Jumlah kosong',
                 'pelanggan_id.required'=>'pelanggan kosong',
                 'pembayaran.required'=>'pembayaran kosong',
 
@@ -57,11 +56,11 @@ class BkeluarController extends Controller
         );
 
         $bkeluar = new bkeluar;
-        $bkeluar-> namap=$request ['stock_id'];
-        $bkeluar-> no=$request ['faktur'];
-        $bkeluar-> jenisk=$request ['tempo'];
-        $bkeluar-> alamatt=$request ['pelanggan_id'];
-        $bkeluar-> kota=$request ['pembayaran'];
+        $bkeluar-> ktglf=$request ['ktglf'];
+        $bkeluar-> stock_id=$request ['stock_id'];
+        $bkeluar-> kjumlah=$request ['kjumlah'];
+        $bkeluar-> pelanggaan_id=$request ['pelanggan_id'];
+        $bkeluar-> pembayaran=$request ['pembayaran'];
         $bkeluar-> save();
 
         if ($bkeluar) {
