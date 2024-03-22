@@ -6,7 +6,7 @@
 <form action="/savebkeluar" method="post" enctype="multipart/form-data">
     @csrf
   <div>
-    <label for="nomor" class="form-label">Barang</label>
+    <label for="nomor" class="form-label">Tanggal Faktur</label>
     <input type="date" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
     <div style=color:red>
       @error('nomor')

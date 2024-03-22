@@ -26,6 +26,8 @@ Route::get('/admin', [App\Http\Controllers\admincontroller::class, 'index']);
 Route::get('/admin', function () {
     return view('admin.admin');
 });
+Route::get('/admin', [App\Http\Controllers\admincontroller::class, 'index']);
+
 
 //stock
 Route::get('/stock', function () {
