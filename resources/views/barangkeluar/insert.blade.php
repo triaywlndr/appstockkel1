@@ -14,17 +14,6 @@
       @enderror
     </div>
   </div>
-
-  <div>
-    <label for="nama" class="form-label">Tanggal Faktur</label>
-    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama" value="{{old('nama')}}">
-    <div style=color:red>
-      @error('nama')
-          {{$message}}
-      @enderror
-    </div>
-  </div>
-
     <div>
         <label for="supplier" class="form-label">Supplier</label>
         <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier" value="{{old('supplier')}}">
