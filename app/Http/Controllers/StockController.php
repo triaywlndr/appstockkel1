@@ -38,13 +38,13 @@ class StockController extends Controller
                 'kode'=>['required'],
                 'namab'=>['required'],
                 'harga'=>['required', 'numeric'],
-                'stock'=>['required', 'numeric'],
+                'stocka'=>['required', 'numeric'],
             ],
             [
                 'kode'=>'Kode Kosong',
                 'namab'=>'Nama Kosong',
                 'harga'=>'Harga Kosong', 'Harga Harus Nomor',
-                'stock'=>'Kode Kosong', 'Stock Harus Nomor',
+                'stocka'=>'Kode Kosong', 'Stock Harus Nomor',
             ]
         );
 
