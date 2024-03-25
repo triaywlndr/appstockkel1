@@ -64,12 +64,6 @@ class BkeluarController extends Controller
         $bkeluar-> pelanggaan_id=$request ['pelanggan_id'];
         $bkeluar-> pembayaran=$request ['pembayaran'];
         $bkeluar-> save();
-
-        $idstock = $request ['stock_id'];
-        $updatestock = Stock::findOrfail($idstock);
-        $updatestock->update([
-            'stocka' => $updatestock->stocka + $request ['kjumlah'],
-        ]);
         if ($bkeluar) {
             return redirect('/bkeluar')->with('status', 'Data telah ditambahkan');
         } else {
@@ -127,7 +121,7 @@ class BkeluarController extends Controller
         $bkeluar -> tempo=$request ['tempo'];
         $bkeluar -> pelanggan_idt=$request ['pelanggan_id'];
         $bkeluar-> pembayaran=$request ['pembayaran'];
-        $pelanggan-> save();
+        $bkeluar-> save();
 
         if ($bkeluar) {
             return redirect('/bkeluar')->with('status', 'Data telah ditambahkan');
