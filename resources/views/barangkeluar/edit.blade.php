@@ -3,65 +3,65 @@
 
 <h1>Riwayat Barang Keluar</h1>
 <hr>
-<form action="/updatebkeluar/{{$bkeluar->id}}" method="post" enctype="multipart/form-data">
+<form action="/updatebkeluar{{$bkeluar->id}}" method="post" enctype="multipart/form-data">
+  @method('PUT')
     @csrf
   <div>
-    <label for="nomor" class="form-label">Tanggal Faktur</label>
-    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Masukan tanggal" value="{{old('tanggalfaktur')}}">
+    <label for="ktglf" class="form-label">Tanggal Faktur</label>
+    <input type="date" class="form-control" id="nomor" name="ktglf" placeholder="Masukan tanggal" value="{{$bkeluar->ktglf}}">
     <div style=color:red>
-      @error('nomor')
+      @error('Tanggal Faktur')
           {{$message}}
       @enderror
     </div>
   </div>
-
   <div>
-    <label for="nama" class="form-label">Nama</label>
-    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama" value="{{old('nama')}}">
+    <label for="stock_id" class="form-label">Nama barang</label>
+    <select id="stock_id" class="form-control" name="stock_id" value="{{$bkeluar->stock_id}}">
+    @foreach ($stock as $stck)
+    <option value="{{$stck->id}}">{{$stck->namab}}</option>
+    @endforeach
+    </select>
     <div style=color:red>
-      @error('nama')
+      @error('stock_id')
           {{$message}}
       @enderror
     </div>
   </div>
-
     <div>
-        <label for="supplier" class="form-label">Supplier</label>
-        <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier" value="{{old('supplier')}}">
+        <label for="kjumlah" class="form-label">Jumlah</label>
+        <input type="text" class="form-control" id="kjumlah" name="kjumlah" placeholder="Jumlah" value="{{$bkeluar->kjumlah}}">
         <div style=color:red>
-          @error('supplier')
-              {{$message}}
-          @enderror
-        </div>
-    </div>
-
-    <div>
-        <label for="nomor" class="form-label">Harga Beli</label>
-        <input type="text" class="form-control" id="nomor" name="nomor" placeholder="nomor" value="{{old('hargabeli')}}">
-        <div style=color:red>
-          @error('nomor')
+          @error('jumlahkeluar')
               {{$message}}
           @enderror
         </div>
     </div>
     <div>
-        <label for="jumlah" class="form-label">Jumlah Masuk</label>
-        <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="jumlah" value="{{old('jumlahmasuk')}}">
-        <div style=color:red>
-          @error('jumlah')
-              {{$message}}
-          @enderror
-        </div>
+      <label for="pelanggan_id" class="form-label">Nama Pelanggan</label>
+      <select id="pelanggan_id" class="form-control" name="pelanggan_id" value="{{$bkeluar->pelanggan_id}}">
+      @foreach ($pelanggan as $plg)
+      <option value="{{$plg->id}}">{{$plg->namap}}</option>
+      @endforeach
+      </select>
+      <div style=color:red>
+        @error('stock_id')
+            {{$message}}
+        @enderror
+      </div>
     </div>
-    <div>
-        <label for="tanggal" class="form-label">Tanggal Dibuat</label>
-        <input type="text" class="form-control" id="tanggal" name="tanggal" placeholder="tanggal" value="{{old('tanggaldibuat')}}">
-        <div style=color:red>
-          @error('tanggal')
-              {{$message}}
-          @enderror
-        </div>
-    </div>
+        <div>
+          <label for="pembayaran" class="form-label">Metode Pembayaran</label>
+          <select id="pembayaran" name="pembayaran" class="form-control" value="{{$bkeluar->pembayaran}}">
+            <option value="Cash">Cash</option>
+            <option value="Kredit">Kredit</option>
+          </select>
+          <div style="color:red">
+              @error('pembayaran')
+                {{$message}}
+              @enderror
+              </div>
+          </div>
       <hr>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

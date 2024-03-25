@@ -1,9 +1,9 @@
 @extends('admin.layout')
 @section('conten')
 
-<h1>Riwayat Barang Keluar</h1>
+<h1>Tambah Barang Keluar</h1>
 <hr>
-<form action="/savebkeluar" method="post" enctype="multipart/form-data">
+<form action="/updatebkeluar/" method="post" enctype="multipart/form-data">
     @csrf
   <div>
     <label for="ktglf" class="form-label">Tanggal Faktur</label>
