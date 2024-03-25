@@ -3,7 +3,7 @@
 
 <h1>Tambah Barang Keluar</h1>
 <hr>
-<form action="/updatebkeluar/" method="post" enctype="multipart/form-data">
+<form action="/savebkeluar" method="post" enctype="multipart/form-data">
     @csrf
   <div>
     <label for="ktglf" class="form-label">Tanggal Faktur</label>
