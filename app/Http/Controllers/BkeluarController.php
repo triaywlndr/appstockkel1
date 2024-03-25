@@ -65,6 +65,11 @@ class BkeluarController extends Controller
         $bkeluar-> pembayaran=$request ['pembayaran'];
         $bkeluar-> save();
 
+        $idstock = $request ['stock_id'];
+        $updatestock = Stock::findOrfail($idstock);
+        $updatestock->update([
+            'stocka' => $updatestock->stocka + $request ['kjumlah'],
+        ]);
         if ($bkeluar) {
             return redirect('/bkeluar')->with('status', 'Data telah ditambahkan');
         } else {
