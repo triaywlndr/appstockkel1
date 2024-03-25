@@ -15,7 +15,8 @@ class RecapController extends Controller
      */
     public function index()
     {
-        return view ('recap.recap');
+        $recap = Recap::all();
+        return view('recap.recap', compact('recap'));
     }
 
     /**
@@ -23,7 +24,7 @@ class RecapController extends Controller
      */
     public function create()
     {
-        //
+        return view('recap.insert');
     }
 
     /**
