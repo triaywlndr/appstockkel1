@@ -142,7 +142,7 @@ class BmasukController extends Controller
      */
     public function destroy(string $id)
     {
-        Bmasuk::find($id);
+        Bmasuk::destroy('id', $id);
         return redirect('/bmasuk');
     }
 }

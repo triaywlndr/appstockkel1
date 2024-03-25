@@ -22,8 +22,8 @@
                  <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$bm->tglf }}</td>
-                    <td>{{$bm->stock->namab}}</td>
-                    <td>{{$bm->supplier->nama}}</td>
+                    <td>{{$bm->stock->namab }}</td>
+                    <td>{{$bm->supplier->nama }}</td>
                     <td>{{$bm->mharga }}</td>
                     <td>{{$bm->mjumlah }}</td>
                     <td>{{$bm->tgld}}</td>
