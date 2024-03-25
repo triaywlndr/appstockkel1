@@ -56,7 +56,7 @@
             <option value="Kredit">Kredit</option>
           </select>
           <div style="color:red">
-              @error('jenisk')
+              @error('pembayaran')
                 {{$message}}
               @enderror
               </div>
