@@ -59,13 +59,13 @@ class BkeluarController extends Controller
 
         $idstock = $request ['stock_id'];
         $barang = Stock::findOrfail($idstock);
-        $subtotal= $updatestock->harga * $request ['kjumlah'];
+        $subtotal= $barang->harga * $request ['kjumlah'];
 
         $bkeluar = new bkeluar;
         $bkeluar-> ktglf=$request ['ktglf'];
         $bkeluar-> stock_id=$request ['stock_id'];
         $bkeluar-> kjumlah=$request ['kjumlah'];
-        $bkeluar-> pelanggaan_id=$request ['pelanggan_id'];
+        $bkeluar-> pelanggan_id=$request ['pelanggan_id'];
         $bkeluar-> pembayaran=$request ['pembayaran'];
         $bkeluar-> subtotal=$subtotal;
         $bkeluar-> save();
