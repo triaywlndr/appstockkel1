@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('conten')
 
-<h1>Riwayat Barang Keluar</h1>
+<h1>Edit Barang Keluar</h1>
 <hr>
 <form action="/updatebkeluar{{$bkeluar->id}}" method="post" enctype="multipart/form-data">
   @method('PUT')
