@@ -52,7 +52,7 @@ class StockController extends Controller
         $stock-> kode=$request ['kode'];
         $stock-> namab=$request ['namab'];
         $stock-> harga=$request ['harga'];
-        $stock-> stock=$request ['stock'];
+        $stock-> stocka=$request ['stocka'];
         $stock-> save();
 
         if ($stock) {
@@ -103,7 +103,7 @@ class StockController extends Controller
     $stock-> kode=$request ['kode'];
     $stock-> namab=$request ['namab'];
     $stock-> harga=$request ['harga'];
-    $stock-> stock=$request ['stock'];
+    $stock-> stocka=$request ['stocka'];
     $stock-> save();
 
     if ($stock) {

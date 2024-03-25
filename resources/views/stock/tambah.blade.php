@@ -32,8 +32,8 @@
     </div>
   </div>
   <div>
-    <label for="stock" class="form-label">Jumlah Stock</label>
-    <input type="text" class="form-control" id="stock" name="stock" placeholder="Masukan Jumlah Stock" value="{{old('stock')}}">
+    <label for="stocka" class="form-label">Jumlah Stock</label>
+    <input type="text" class="form-control" id="stocka" name="stocka" placeholder="Masukan Jumlah Stock" value="{{old('stocka')}}">
     <div style=color:red>
       @error('stock')
           {{$message}}

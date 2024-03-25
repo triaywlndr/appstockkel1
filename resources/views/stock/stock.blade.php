@@ -24,7 +24,7 @@
                     <td>{{$stck->kode }}</td>
                     <td>{{$stck->namab }}</td>
                     <td>{{$stck->harga }}</td>
-                    <td>{{$stck->stock }}</td>
+                    <td>{{$stck->stocka }}</td>
                     <td><a href="/editstock/{{$stck->id}}" class="btn btn-success">Edit</a></td>
                     <td><a href="/delete/{{$stck->id}}" class="btn btn-danger">Delete</a></td>
                 </tr>   
