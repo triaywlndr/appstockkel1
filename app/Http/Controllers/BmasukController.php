@@ -68,7 +68,7 @@ class BmasukController extends Controller
         $idstock = $request ['stock_id'];
         $updatestock = Stock::findOrfail($idstock);
         $updatestock->update([
-            'stock' => $updatestock->stock + $request ['mjumlah'],
+            'stocka' => $updatestock->stock + $request ['mjumlah'],
         ]);
         
         if ($bmasuk) {
