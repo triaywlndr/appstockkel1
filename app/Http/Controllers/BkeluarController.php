@@ -57,13 +57,24 @@ class BkeluarController extends Controller
             ]
         );
 
+        $idstock = $request ['stock_id'];
+        $barang = Stock::findOrfail($idstock);
+        $subtotal= $updatestock->harga * $request ['kjumlah'];
+
         $bkeluar = new bkeluar;
         $bkeluar-> ktglf=$request ['ktglf'];
         $bkeluar-> stock_id=$request ['stock_id'];
         $bkeluar-> kjumlah=$request ['kjumlah'];
         $bkeluar-> pelanggaan_id=$request ['pelanggan_id'];
         $bkeluar-> pembayaran=$request ['pembayaran'];
+        $bkeluar-> subtotal=$subtotal;
         $bkeluar-> save();
+
+        $updatestock = Stock::findOrfail($idstock);
+        $updatestock->update([
+            'stocka' => $updatestock->stocka - $request ['kjumlah'],
+        ]);
+
         if ($bkeluar) {
             return redirect('/bkeluar')->with('status', 'Data telah ditambahkan');
         } else {
