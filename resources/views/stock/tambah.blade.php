@@ -35,7 +35,7 @@
     <label for="stocka" class="form-label">Jumlah Stock</label>
     <input type="text" class="form-control" id="stocka" name="stocka" placeholder="Masukan Jumlah Stock" value="{{old('stocka')}}">
     <div style=color:red>
-      @error('stock')
+      @error('stocka')
           {{$message}}
       @enderror
     </div>
