@@ -89,9 +89,3 @@ Route::get('/recap', function () {
     return view('recap.recap');
 });
 Route::get('/recap', [App\Http\Controllers\RecapController::class, 'index']);
-Route::get('/tambahrecap', [App\Http\Controllers\RecapController::class, 'create']);
-Route::post('/saverecap', [App\Http\Controllers\RecapController::class, 'store']);
-Route::get('/editrecap/{id}', [App\Http\Controllers\RecapController::class, 'edit']);
-Route::put('/updaterecap/{id}', [App\Http\Controllers\RecapController::class, 'update']);
-Route::get('/deleteq/{id}', [App\Http\Controllers\RecapController::class, 'destroy']);
-

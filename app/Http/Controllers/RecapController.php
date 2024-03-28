@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bkeluar;
+use App\Models\Bmasuk;
 use Illuminate\Http\Request;
 
 class RecapController extends Controller
@@ -15,8 +17,9 @@ class RecapController extends Controller
      */
     public function index()
     {
-        $recap = Recap::all();
-        return view('recap.recap', compact('recap'));
+        $bmasuk = Bmasuk::all();
+        $bkeluar = Bkeluar::all();
+        return view('recap.recap', compact('bmasuk', 'bkeluar'));
     }
 
     /**
@@ -24,7 +27,7 @@ class RecapController extends Controller
      */
     public function create()
     {
-        return view('recap.insert');
+
     }
 
     /**
