@@ -7,7 +7,7 @@
         <hr>
         <div class="row">
             <div class="col-sm-8">
-                <form class="row-g3 mb-3" method="get" action="/recap" enctype="multipart/form-data">
+                <form class="row g-3 mb-3" method="get" action="/recap" enctype="multipart/form-data">
                 @csrf
                     <div class="col-md-3">
                         <input type="date" value="{{old('tgl_mulai')}}" name="tgl_mulai" class="form-control">
