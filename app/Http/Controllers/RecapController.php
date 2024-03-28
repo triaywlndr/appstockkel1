@@ -17,23 +17,21 @@ class RecapController extends Controller
      */
     public function index(Request $request)
     {
-        $tgl_mulai = $request->tgl_mulai;
-        $tgl_selesai = $request->tgl_selesai;
+        $tgl_mulai      = $request->tgl_mulai;
+        $tgl_selesai    = $request->tgl_selesai;
         if ($tgl_mulai or $tgl_selesai) {
+            $bmasuk  = Bmasuk::whereBetween('tglf', [$tgl_mulai, $tgl_selesai])->get();
+            $bkeluar  = Bkeluar::whereBetween('ktglf', [$tgl_mulai, $tgl_selesai])->get();
+            $sum_total  = Bkeluar::whereBetween('ktglf', [$tgl_mulai, $tgl_selesai])->sum('subtotal');
 
-            $bmasuk = Bmasuk::where('tglf', [$tgl_mulai, $tgl_selesai])->get();
-            $bkeluar = Bkeluar::where('ktglf', [$tgl_mulai, $tgl_selesai])->get();
-            $bkeluar = Bkeluar::where('created_at', [$tgl_mulai, $tgl_selesai])->sum('subtotal');
-
-            return view('recap.recap', compact('bmasuk', 'bkeluar'));
+            return view('recap.recap',  compact('bkeluar', 'bmasuk'));
         } else {
 
             $bmasuk = Bmasuk::all();
             $bkeluar = Bkeluar::all();
-            $sum_total = Bkeluar::sum('subtotal');
-            return view('recap.recap', compact('bmasuk', 'bkeluar'));
+            $sum_total  = Bkeluar::sum('subtotal');
+            return view('recap.recap',  compact('bkeluar', 'bmasuk'));
         }
-        return view('recap.recap', compact('bmasuk', 'bkeluar'));
     }
 
     /**
